@@ -51,6 +51,7 @@ class StoryCard extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
+                // ignore: deprecated_member_use
                 colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
                 stops: const [0.6, 1.0],
               ),

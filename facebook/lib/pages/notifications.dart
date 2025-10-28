@@ -4,6 +4,8 @@ class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
 
   @override
+  Widget build
+  
   State<NotificationsPage> createState() => _NotificationsPageState();
 }
 
