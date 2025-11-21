@@ -63,11 +63,13 @@ class _NewsfeedState extends State<Newsfeed> {
             const Createpost(),
             StoriesList(stories: stories, onStoryTap: (s) {}),
             const SizedBox(height: 8),
-            ...posts.map((p) => NewsFeedPost(
-                  name: p['name'],
-                  caption: p['caption'],
-                  imageurl: p['imageurl'],
-                )),
+            ...posts.map(
+              (p) => NewsFeedPost(
+                name: p['name'],
+                caption: p['caption'],
+                imageurl: p['imageurl'],
+              ),
+            ),
             const SizedBox(height: 24),
           ],
         ),

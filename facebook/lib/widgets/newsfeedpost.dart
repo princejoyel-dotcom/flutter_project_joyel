@@ -13,54 +13,54 @@ class NewsFeedPost extends StatelessWidget {
         GestureDetector(
           onTap: () {},
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                ListTile(
-                  leading: const CircleAvatar(
-                    backgroundImage: AssetImage("assets/profile/prof1.jpg"),
-                  ),
-                  title: RichText(
-                    text: TextSpan(
-                      text: name ?? "User Name",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage("assets/profile/prof1.jpg"),
+                ),
+                title: RichText(
+                  text: TextSpan(
+                    text: name ?? "User Name",
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: " Follow",
+                        style: const TextStyle(color: Colors.blue),
                       ),
-                      children: [
-                        TextSpan(
-                          text: " Follow",
-                          style: const TextStyle(color: Colors.blue),
-                        ),
-                      ],
-                    ),
-                  ),
-                  subtitle: const Text("followers"),
-                  trailing: const Icon(Icons.more_horiz),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    caption ?? "This is a sample caption for the post.",
+                    ],
                   ),
                 ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(imageurl ?? "assets/myday/myday1.jpg"),
-                    ),
+                subtitle: const Text("followers"),
+                trailing: const Icon(Icons.more_horiz),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  caption ?? "This is a sample caption for the post.",
+                ),
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(imageurl ?? "assets/myday/myday1.jpg"),
                   ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.thumb_up_alt_outlined),
-                  title: Icon(Icons.comment_outlined),
-                  trailing: Icon(Icons.share_outlined),
-                ),
-              ],
-            ),
+              ),
+              ListTile(
+                leading: Icon(Icons.thumb_up_alt_outlined),
+                title: Icon(Icons.comment_outlined),
+                trailing: Icon(Icons.share_outlined),
+              ),
+            ],
+          ),
         ),
       ],
     );

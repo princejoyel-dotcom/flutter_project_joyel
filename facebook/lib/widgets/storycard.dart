@@ -51,9 +51,8 @@ class StoryCard extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                // ignore: deprecated_member_use
-                colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
-                stops: const [0.6, 1.0],
+                colors: [Colors.transparent, Color.fromRGBO(0, 0, 0, 0.7)],
+                stops: [0.6, 1.0],
               ),
             ),
             child: Padding(
@@ -87,8 +86,7 @@ class StoryCard extends StatelessWidget {
                   Text(
                     story.timeAge,
                     style: TextStyle(
-                      // ignore: deprecated_member_use
-                      color: Colors.white.withOpacity(0.8),
+                      color: Color.fromRGBO(255, 255, 255, 0.8),
                       fontSize: 10,
                     ),
                   ),

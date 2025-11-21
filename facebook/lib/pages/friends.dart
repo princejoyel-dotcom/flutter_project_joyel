@@ -20,22 +20,22 @@ class _FriendsPageState extends State<FriendsPage> {
     Friend(
       name: 'Alice Fae',
       subtitle: 'Followed by 1.2K',
-      assetImage: 'assets/icon/profile1.png',
+      assetImage: 'assets/profile/prof1.jpg',
     ),
     Friend(
       name: 'Bob Marl',
       subtitle: 'Followed by 980',
-      assetImage: 'assets/icon/profile2.png',
+      assetImage: 'assets/profile/prof2.jpg',
     ),
     Friend(
       name: 'Carmen Diaz',
       subtitle: null,
-      assetImage: 'assets/icon/profile3.png',
+      assetImage: 'assets/profile/prof3.jpg',
     ),
     Friend(
       name: 'Dan Niel',
       subtitle: 'Followed by 3.4K',
-      assetImage: 'assets/icon/profile4.png',
+      assetImage: 'assets/profile/prof4.jpg',
     ),
     Friend(name: 'Emma Frost', subtitle: 'Followed by 420', assetImage: null),
     Friend(name: 'Frank Mill', subtitle: null, assetImage: null),
