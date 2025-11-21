@@ -87,6 +87,7 @@ class StoryCard extends StatelessWidget {
                   Text(
                     story.timeAge,
                     style: TextStyle(
+                      // ignore: deprecated_member_use
                       color: Colors.white.withOpacity(0.8),
                       fontSize: 10,
                     ),

@@ -6,7 +6,9 @@ class StoriesList extends StatefulWidget {
   final List<StoryModel> stories;
   final Function(StoryModel)? onStoryTap;
 
-  const StoriesList({super.key, required this.stories, this.onStoryTap});
+  // ignore: use_super_parameters
+  const StoriesList({Key? key, required this.stories, this.onStoryTap})
+    : super(key: key);
 
   @override
   State<StoriesList> createState() => _StoriesListState();

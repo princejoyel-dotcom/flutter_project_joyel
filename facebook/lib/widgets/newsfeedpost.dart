@@ -12,8 +12,7 @@ class NewsFeedPost extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {},
-          child: Container(
-            child: Column(
+          child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -30,9 +29,8 @@ class NewsFeedPost extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          mouseCursor: SystemMouseCursors.click,
                           text: " Follow",
-                          style: TextStyle(color: Colors.blue),
+                          style: const TextStyle(color: Colors.blue),
                         ),
                       ],
                     ),
@@ -63,7 +61,6 @@ class NewsFeedPost extends StatelessWidget {
                 ),
               ],
             ),
-          ),
         ),
       ],
     );

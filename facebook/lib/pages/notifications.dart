@@ -4,14 +4,10 @@ class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
 
   @override
-  Widget build
-  
   State<NotificationsPage> createState() => _NotificationsPageState();
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
-  @override
-  class _NotificationPageState extends State<NotificationPage> {
   final List<_NotificationItem> _items = [
     _NotificationItem(
       imagePath: 'assets/images/user1.jpg',
@@ -28,8 +24,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
       title: 'Mike Johnson sent you a friend request',
       subtitle: '5 hrs ago',
     ),
-    // Add more items as needed
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +38,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
       ),
       body: Column(
         children: [
-          // optional header or filter row
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
@@ -61,7 +56,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
             ),
           ),
           const Divider(height: 1),
-          // notifications list
           Expanded(
             child: ListView.separated(
               itemCount: _items.length,
@@ -89,4 +83,16 @@ class _NotificationsPageState extends State<NotificationsPage> {
       ),
     );
   }
+}
+
+class _NotificationItem {
+  final String imagePath;
+  final String title;
+  final String subtitle;
+
+  _NotificationItem({
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
+  });
 }

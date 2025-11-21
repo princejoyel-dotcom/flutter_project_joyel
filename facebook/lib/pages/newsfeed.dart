@@ -12,51 +12,36 @@ class Newsfeed extends StatefulWidget {
 }
 
 class _NewsfeedState extends State<Newsfeed> {
-  List<StoryModel> stories = [
+  final List<StoryModel> stories = [
     StoryModel(
       id: '1',
-      username: 'Juan',
+      username: 'Alice',
       profileImagePath: 'assets/profile/prof1.jpg',
       storyImagePath: 'assets/myday/myday1.jpg',
       timestamp: DateTime.now().subtract(const Duration(hours: 2)),
       isViewed: false,
     ),
-
     StoryModel(
       id: '2',
-      username: 'Juan1',
+      username: 'Bob',
       profileImagePath: 'assets/profile/prof2.jpg',
       storyImagePath: 'assets/myday/myday2.jpg',
-      timestamp: DateTime.now().subtract(const Duration(hours: 2)),
-      isViewed: false,
+      timestamp: DateTime.now().subtract(const Duration(hours: 3)),
+      isViewed: true,
     ),
+  ];
 
-    StoryModel(
-      id: '3',
-      username: 'Juan2',
-      profileImagePath: 'assets/profile/prof3.jpg',
-      storyImagePath: 'assets/myday/myday3.jpg',
-      timestamp: DateTime.now().subtract(const Duration(hours: 2)),
-      isViewed: false,
-    ),
-
-    StoryModel(
-      id: '4',
-      username: 'Juan3',
-      profileImagePath: 'assets/profile/prof4.jpg',
-      storyImagePath: 'assets/myday/myday4.jpg',
-      timestamp: DateTime.now().subtract(const Duration(hours: 2)),
-      isViewed: false,
-    ),
-
-    StoryModel(
-      id: '5',
-      username: 'Juan4',
-      profileImagePath: 'assets/profile/prof5.jpg',
-      storyImagePath: 'assets/myday/myday5.jpg',
-      timestamp: DateTime.now().subtract(const Duration(hours: 2)),
-      isViewed: false,
-    ),
+  final List<Map<String, String>> posts = const [
+    {
+      'name': 'Alice',
+      'caption': 'Enjoying the sunshine!',
+      'imageurl': 'assets/myday/myday1.jpg',
+    },
+    {
+      'name': 'Bob',
+      'caption': 'Great day for a walk.',
+      'imageurl': 'assets/myday/myday2.jpg',
+    },
   ];
 
   @override
@@ -65,23 +50,25 @@ class _NewsfeedState extends State<Newsfeed> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Image.asset("assets/icon/logo.png", height: 80),
+        title: Image.asset('assets/icon/logo.png', height: 40),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          DrawerButton(),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Createpost(),
-            StoriesList(stories: stories, onStoryTap: (story) {}),
-            const NewsFeedPost(),
-            const NewsFeedPost(
-              name: "Alice Johnson",
-              caption: "Enjoying the sunny weather at the beach!",
-              imageurl: "assets/myday/myday2.jpg",
-            ),
+            StoriesList(stories: stories, onStoryTap: (s) {}),
+            const SizedBox(height: 8),
+            ...posts.map((p) => NewsFeedPost(
+                  name: p['name'],
+                  caption: p['caption'],
+                  imageurl: p['imageurl'],
+                )),
+            const SizedBox(height: 24),
           ],
         ),
       ),

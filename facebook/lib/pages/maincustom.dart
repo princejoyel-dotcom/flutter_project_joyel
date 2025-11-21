@@ -16,13 +16,14 @@ class MainCustomPage extends StatefulWidget {
 class _MainCustomPageState extends State<MainCustomPage> {
   int selectedIndex = 0;
 
-  List pages = const <dynamic>[
+  final List<Widget> pages = const <Widget>[
     Newsfeed(),
     FriendsPage(),
     ReelsPage(),
     MarketplacePage(),
     NotificationsPage(),
     MenuPage(),
+    Center(child: Text('Profile')),
   ];
   //handle index
   void onItemTapped(int index) {
@@ -39,25 +40,17 @@ class _MainCustomPageState extends State<MainCustomPage> {
         currentIndex: selectedIndex,
         onTap: onItemTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Friends"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.ondemand_video),
-            label: "Reels",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_convenience_store_rounded),
-            label: "Friends",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Market"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: "Notifications",
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Friends'),
+          BottomNavigationBarItem(icon: Icon(Icons.ondemand_video), label: 'Reels'),
+          BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Marketplace'),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notifications'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
           BottomNavigationBarItem(
             icon: CircleAvatar(
-              backgroundImage: AssetImage("assets/profile/prof4.jpg"),
+              backgroundImage: AssetImage('assets/profile/prof4.jpg'),
             ),
+            label: 'Profile',
           ),
         ],
       ),
